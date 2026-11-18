@@ -61,6 +61,7 @@ class PropertySearchRequest extends FormRequest
             'verifiedOnly' => ['nullable', 'boolean'],
             'keywords' => ['nullable', 'string', 'max:120'],
             'ref' => ['nullable', 'string', 'max:40'],
+            'country' => ['nullable', 'string', 'max:80'],
             'city' => ['nullable', 'string', 'max:80'],
             'state' => ['nullable', 'string', 'max:80'],
             'sort' => ['nullable', 'in:newest,price_asc,price_desc'],

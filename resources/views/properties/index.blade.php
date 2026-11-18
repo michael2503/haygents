@@ -229,10 +229,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="small firaMedium">Country</label>
-                                <select name="state" class="form-control fieldOne">
-                                    <option value="all">All States</option>
-                                    @foreach(['Lagos', 'FCT', 'Rivers', 'Oyo'] as $st)
-                                        <option value="{{ $st }}" {{ $activeState === $st ? 'selected' : '' }}>{{ $st }}</option>
+                                <select id="propertyFilterCountry" name="country" class="form-control form-control-sm" data-selected="{{ $activeCountry }}">
+                                    <option value="all" {{ $activeCountry === 'all' ? 'selected' : '' }}>All Countries</option>
+                                    @foreach($allCountry as $countryOpt)
+                                        <option value="{{ $countryOpt }}" {{ strcasecmp($activeCountry, $countryOpt) === 0 ? 'selected' : '' }}>{{ $countryOpt }}</option>
                                     @endforeach
                                 </select>
                             </div>
