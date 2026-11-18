@@ -26,7 +26,7 @@
 
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
             <div class="mb-3 mb-md-0">
-                <div class="hg-eyebrow">Shortlets</div>
+                <div class="hg-eyebrow">For {{ $property->purpose }}</div>
                 <h1 class="h2 firaSemiBold mb-1" style="color: var(--hg-navy);">{{ $property->title }}</h1>
                 <p class="small text-muted mb-0">
                     <i class="fas fa-map-marker-alt text-primary mr-1"></i>

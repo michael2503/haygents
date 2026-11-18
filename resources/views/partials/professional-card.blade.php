@@ -7,8 +7,8 @@
         <h3 class="h6 font-weight-bold mb-1">{{ $professional->name }}</h3>
         <div class="small font-weight-semibold text-primary mb-1">{{ $professional->category }} · {{ $professional->years_exp }} yrs</div>
         <div class="small text-muted mb-2"><i class="fas fa-map-marker-alt mr-1"></i> {{ $professional->city }}, {{ $professional->state }}</div>
-        {{-- <p class="small text-secondary mb-3" style="flex: 1;">{{ $professional->description }}</p> --}}
+        <p class="small text-secondary mb-3" style="flex: 1;">{{ $professional->description }}</p>
         <div class="hg-cred-box"><i class="fas fa-certificate text-primary mr-1"></i> {{ $professional->credentials }}</div>
-        <a href="{{ route('professionals.index') }}#prof-{{ $professional->slug }}" class="btn hg-btn-outline btn-block">Request Service</a>
+        <a href="{{ route('professionals.show', $professional->slug) }}" class="btn hg-btn-outline btn-block">View Profile</a>
     </article>
 </div>

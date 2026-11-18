@@ -1,0 +1,105 @@
+.page-link{
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    /* padding-top: 10px; */
+    margin: 0px 5px;
+    font-size: 15px;
+}
+.page-item.active .page-link{
+    z-index: 3;
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+.page-item:first-child .page-link{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%
+}
+.page-item:first-child .page-link{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%
+}
+.page-item:last-child .page-link{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+/* LOOKING FOR */
+.lookFor{
+    border-bottom: 1px solid #E3E6EA;
+    padding-bottom: 30px;
+}
+.looking-label {
+    display: block;
+    font-size: 13px;
+    font-family: "FiraMedium";
+    color: #263445;
+    margin-bottom: 8px;
+}
+
+.looking-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.looking-option {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.looking-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.looking-option span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 15px;
+    min-height: 34px;
+    border: 1px solid #dce1e7;
+    border-radius: 30px;
+    background: #fff;
+    color: #263445;
+    font-size: 13px;
+    font-family: "FiraMedium";
+    transition: all 0.2s ease;
+}
+
+.looking-option input:checked + span {
+    background: #071522;
+    border-color: #071522;
+    color: #fff;
+}
+
+.looking-option input:focus-visible + span {
+    outline: 2px solid #0d6efd;
+    outline-offset: 3px;
+}
+
+.looking-option:hover span {
+    border-color: #071522;
+}
+.fieldOne{
+    border-radius: 12px;
+    border-color: #E3E6EA;
+    height: 45px;
+}

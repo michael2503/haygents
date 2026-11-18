@@ -21,6 +21,12 @@ Route::prefix('properties')->name('properties.')->group(function () {
 Route::get('/agents', [DirectoryController::class, 'agents'])->name('agents.index');
 Route::get('/companies', [DirectoryController::class, 'companies'])->name('companies.index');
 Route::get('/professionals', [DirectoryController::class, 'professionals'])->name('professionals.index');
+Route::get('/professionals/{professional:slug}', [DirectoryController::class, 'showProfessional'])->name('professionals.show');
+
+
+// Route::get('/agents', [DirectoryController::class, 'agents'])->name('agents.index');
+// Route::get('/companies', [DirectoryController::class, 'companies'])->name('companies.index');
+// Route::get('/professionals', [DirectoryController::class, 'professionals'])->name('professionals.index');
 
 Route::post('/favorites/toggle', [FavoriteController::class, 'toggle'])
     ->middleware('auth')

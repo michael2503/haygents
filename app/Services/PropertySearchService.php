@@ -46,11 +46,11 @@ class PropertySearchService
         }
 
         if (!empty($filters['bedrooms']) && $filters['bedrooms'] !== 'any') {
-            $query->where('bedrooms', '>=', (int) $filters['bedrooms']);
+            $query->where('bedrooms', '=', (int) $filters['bedrooms']);
         }
 
         if (!empty($filters['bathrooms']) && $filters['bathrooms'] !== 'any') {
-            $query->where('bathrooms', '>=', (int) $filters['bathrooms']);
+            $query->where('bathrooms', '=', (int) $filters['bathrooms']);
         }
 
         if (!empty($filters['furnishing']) && $filters['furnishing'] !== 'any') {

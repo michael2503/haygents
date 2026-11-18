@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PropertySearchRequest;
+use App\Models\Category;
 use App\Models\Favorite;
 use App\Models\Property;
 use App\Services\PropertySearchService;
@@ -22,7 +23,9 @@ class PropertyController extends Controller
             ? Favorite::where('user_id', Auth::id())->pluck('property_id')->toArray()
             : [];
 
-        return view('properties.index', compact('properties', 'filters', 'favoriteIds'));
+        $catego = Category::get();
+
+        return view('properties.index', compact('properties', 'filters', 'favoriteIds', 'catego'));
     }
 
     public function show(Property $property): View

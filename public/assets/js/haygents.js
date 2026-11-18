@@ -235,199 +235,6 @@ $(function () {
         startAutoSlide();
     }
 
-
-
-
-    // =========================================================
-    // Company Auto & Manual Slider (Home Page)
-    // =========================================================
-    function initCompanySlider() {
-        var sliderSection = document.getElementById('companys');
-        var slider = document.getElementById('companySlider');
-        var track = document.getElementById('companyTrack');
-        var dotsWrap = document.getElementById('companyDots');
-        var prevBtn = document.getElementById('companyPrevBtn');
-        var nextBtn = document.getElementById('companyNextBtn');
-
-        if (!slider || !track || !dotsWrap) return;
-
-        var slides = track.querySelectorAll('.hg-testimonial-slide');
-        var total = slides.length;
-        if (total === 0) return;
-
-        var currentIndex = 0;
-        var isHovered = false;
-        var timerId = null;
-
-        function getVisibleCount() {
-            if (window.innerWidth >= 992) return 5;
-            if (window.innerWidth >= 768) return 2;
-            return 1; // One testimonial per slide on mobile
-        }
-
-        function getMaxIndex() {
-            return Math.max(0, total - getVisibleCount());
-        }
-
-        function renderDots() {
-            var maxIdx = getMaxIndex();
-            var dotCount = maxIdx + 1;
-            var html = '';
-            for (var i = 0; i < dotCount; i++) {
-                var isActive = i === currentIndex;
-                html +=
-                    '<button type="button" class="hg-slider-dot ' +
-                    (isActive ? 'active' : '') +
-                    '" data-slide-index="' +
-                    i +
-                    '" role="tab" aria-selected="' +
-                    (isActive ? 'true' : 'false') +
-                    '" aria-label="Show testimonial slide ' +
-                    (i + 1) +
-                    '"></button>';
-            }
-            dotsWrap.innerHTML = html;
-        }
-
-        function updateTrack() {
-            var visible = getVisibleCount();
-            var maxIdx = getMaxIndex();
-            if (currentIndex > maxIdx) currentIndex = maxIdx;
-            if (currentIndex < 0) currentIndex = 0;
-
-            var shiftPercent = (currentIndex * 100) / visible;
-            track.style.transform = 'translateX(-' + shiftPercent + '%)';
-
-            var dots = dotsWrap.querySelectorAll('.hg-slider-dot');
-            for (var i = 0; i < dots.length; i++) {
-                var active = i === currentIndex;
-                dots[i].classList.toggle('active', active);
-                dots[i].setAttribute('aria-selected', active ? 'true' : 'false');
-            }
-        }
-
-        function goTo(nextIdx) {
-            var maxIdx = getMaxIndex();
-            if (maxIdx === 0) {
-                currentIndex = 0;
-            } else if (nextIdx > maxIdx) {
-                currentIndex = 0;
-            } else if (nextIdx < 0) {
-                currentIndex = maxIdx;
-            } else {
-                currentIndex = nextIdx;
-            }
-            updateTrack();
-        }
-
-        function stopAutoSlide() {
-            if (timerId !== null) {
-                window.clearInterval(timerId);
-                timerId = null;
-            }
-        }
-
-        function startAutoSlide() {
-            stopAutoSlide();
-            if (isHovered || getMaxIndex() === 0) return;
-            timerId = window.setInterval(function () {
-                goTo(currentIndex + 1);
-            }, 4500);
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function () {
-                goTo(currentIndex - 1);
-                startAutoSlide();
-            });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function () {
-                goTo(currentIndex + 1);
-                startAutoSlide();
-            });
-        }
-
-        dotsWrap.addEventListener('click', function (e) {
-            var target = e.target.closest ? e.target.closest('[data-slide-index]') : null;
-            if (!target) return;
-            var idx = parseInt(target.getAttribute('data-slide-index'), 10);
-            if (!isNaN(idx)) {
-                goTo(idx);
-                startAutoSlide();
-            }
-        });
-
-        // Pause auto-slide on mouse hover or keyboard focus; resume on leave
-        var hoverTarget = sliderSection || slider;
-        hoverTarget.addEventListener('mouseenter', function () {
-            isHovered = true;
-            stopAutoSlide();
-        });
-        hoverTarget.addEventListener('mouseleave', function () {
-            isHovered = false;
-            startAutoSlide();
-        });
-        hoverTarget.addEventListener('focusin', function () {
-            isHovered = true;
-            stopAutoSlide();
-        });
-        hoverTarget.addEventListener('focusout', function () {
-            isHovered = false;
-            startAutoSlide();
-        });
-
-        // Mobile touch swipe support
-        var touchStartX = 0;
-        var touchStartY = 0;
-        track.addEventListener(
-            'touchstart',
-            function (e) {
-                stopAutoSlide();
-                touchStartX = e.changedTouches[0].clientX;
-                touchStartY = e.changedTouches[0].clientY;
-            },
-            { passive: true }
-        );
-        track.addEventListener(
-            'touchend',
-            function (e) {
-                var dx = e.changedTouches[0].clientX - touchStartX;
-                var dy = e.changedTouches[0].clientY - touchStartY;
-                if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-                    goTo(dx < 0 ? currentIndex + 1 : currentIndex - 1);
-                }
-                startAutoSlide();
-            },
-            { passive: true }
-        );
-
-        // Desktop mouse drag support
-        var mouseDownX = null;
-        track.addEventListener('mousedown', function (e) {
-            mouseDownX = e.clientX;
-        });
-        window.addEventListener('mouseup', function (e) {
-            if (mouseDownX === null) return;
-            var dx = e.clientX - mouseDownX;
-            mouseDownX = null;
-            if (Math.abs(dx) > 45) {
-                goTo(dx < 0 ? currentIndex + 1 : currentIndex - 1);
-            }
-        });
-
-        window.addEventListener('resize', function () {
-            renderDots();
-            updateTrack();
-        });
-
-        renderDots();
-        updateTrack();
-        startAutoSlide();
-    }
-
-
     // =========================================================
     // Property Details Modal Photo Carousel Slider
     // =========================================================
@@ -515,6 +322,25 @@ $(function () {
     }
 
     initTestimonialSlider();
-    initCompanySlider();
     initPropertyGalleryModal();
+
+    // Segmented filter buttons inside sidebar filter forms
+    $(document).on('click', '[data-seg-target]', function () {
+        var targetSelector = $(this).attr('data-seg-target');
+        var val = $(this).attr('data-seg-value');
+        if (targetSelector) {
+            $(targetSelector).val(val);
+            $('[data-seg-target="' + targetSelector + '"]').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+
+    // Professional profile bio read more toggle
+    $(document).on('click', '[data-action="toggle-prof-bio"]', function () {
+        var $extra = $('#profBioExtra');
+        if (!$extra.length) return;
+        var isHidden = $extra.hasClass('d-none');
+        $extra.toggleClass('d-none', !isHidden);
+        $(this).text(isHidden ? 'Read less' : 'Read more');
+    });
 });
