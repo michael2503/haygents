@@ -30,7 +30,7 @@
                                 {{ strtoupper(substr($testimonial->customer_name, 0, 2)) }}
                             </div>
                             <div>
-                                <div class="font-weight-bold small">{{ $testimonial->customer_name }}</div>
+                                <div class="firaSemiBold small">{{ $testimonial->customer_name }}</div>
                                 <div class="text-muted" style="font-size: 0.78rem;">{{ $testimonial->customer_role }}, {{ $testimonial->location }}</div>
                             </div>
                         </div>

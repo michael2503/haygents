@@ -4,9 +4,10 @@
 <?php
     $activePurpose = $filters['purpose'] ?? 'all';
     $activeCategory = $filters['category'] ?? 'all';
-    $activeCity = $filters['city'] ?? '';
-    $activeState = $filters['state'] ?? '';
-    $activeLocation = $filters['location'] ?? ($filters['area'] ?? ($activeCity ?: $activeState));
+    $activeCountry = $filters['country'] ?? 'all';
+    $activeCity = $filters['city'] ?? 'all';
+    $activeState = $filters['state'] ?? 'all';
+    $activeLocation = $filters['location'] ?? ($filters['area'] ?? (($activeCity !== 'all' ? $activeCity : '') ?: ($activeState !== 'all' ? $activeState : ($activeCountry !== 'all' ? $activeCountry : ''))));
     $activeSort = $filters['sort'] ?? 'newest';
     $startIdx = $properties->total() === 0 ? 0 : (($properties->currentPage() - 1) * $properties->perPage()) + 1;
     $endIdx = min($properties->total(), $properties->currentPage() * $properties->perPage());
@@ -185,27 +186,25 @@
                                 <label class="small font-weight-bold">Looking to</label>
                                 <div class="form-group lookFor">
                                     <div class="looking-options">
+                                        
+
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Buy" checked>
+                                            <input type="radio" name="purpose" value="sale" checked>
                                             <span>Buy</span>
                                         </label>
 
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Rent">
+                                            <input type="radio" name="purpose" value="rent">
                                             <span>Rent</span>
                                         </label>
 
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Lease">
+                                            <input type="radio" name="purpose" value="lease">
                                             <span>Lease</span>
                                         </label>
 
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Shortlet">
+                                            <input type="radio" name="purpose" value="shortlet">
                                             <span>Shortlet</span>
                                         </label>
                                     </div>
@@ -215,30 +214,24 @@
                             </div>
                             <div class="form-group">
                                 <label class="small firaMedium">Country</label>
-                                <select name="state" class="form-control fieldOne">
-                                    <option value="all">All States</option>
-                                    <?php $__currentLoopData = ['Lagos', 'FCT', 'Rivers', 'Oyo']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $st): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($st); ?>" <?php echo e($activeState === $st ? 'selected' : ''); ?>><?php echo e($st); ?></option>
+                                <select id="propertyFilterCountry" name="country" class="form-control fieldOne" data-selected="<?php echo e($activeCountry); ?>">
+                                    <option value="all" <?php echo e($activeCountry === 'all' ? 'selected' : ''); ?>>All Countries</option>
+                                    <?php $__currentLoopData = $allCountry; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country => $states): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($country); ?>" <?php echo e(strcasecmp($activeCountry, $country) === 0 ? 'selected' : ''); ?>><?php echo e(ucwords($country)); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-6">
                                     <label class="small firaMedium">State</label>
-                                    <select name="state" class="form-control fieldOne">
-                                        <option value="all">All States</option>
-                                        <?php $__currentLoopData = ['Lagos', 'FCT', 'Rivers', 'Oyo']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $st): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($st); ?>" <?php echo e($activeState === $st ? 'selected' : ''); ?>><?php echo e($st); ?></option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <select id="propertyFilterState" name="state" class="form-control fieldOne" data-selected="<?php echo e($activeState); ?>">
+                                        <option value="all">Select country first</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="small firaMedium">City</label>
-                                    <select name="city" class="form-control fieldOne">
-                                        <option value="all">All Cities</option>
-                                        <?php $__currentLoopData = ['Lagos', 'Abuja', 'Port Harcourt', 'Ibadan']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <option value="<?php echo e($ct); ?>" <?php echo e($activeCity === $ct ? 'selected' : ''); ?>><?php echo e($ct); ?></option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <select id="propertyFilterCity" name="city" class="form-control fieldOne" data-selected="<?php echo e($activeCity); ?>">
+                                        <option value="all">Select state first</option>
                                     </select>
                                 </div>
                             </div>

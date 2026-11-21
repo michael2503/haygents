@@ -35,9 +35,9 @@
                 <ul class="hg-footer-links">
                     <li><a href="<?php echo e(route('agents.index')); ?>">Become an Agent</a></li>
                     <li><a href="<?php echo e(route('companies.index')); ?>">Register Your Company</a></li>
-                    <li><a href="<?php echo e(route('professionals.index', ['category' => 'property-lawyers'])); ?>">Property Lawyers</a></li>
-                    <li><a href="<?php echo e(route('professionals.index', ['category' => 'land-surveyors'])); ?>">Surveyors</a></li>
-                    <li><a href="<?php echo e(route('professionals.index', ['category' => 'property-valuers'])); ?>">Valuers</a></li>
+                    <li><a href="<?php echo e(route('professionals.index', ['category' => 'lawyers'])); ?>">Property Lawyers</a></li>
+                    <li><a href="<?php echo e(route('professionals.index', ['category' => 'surveyors'])); ?>">Surveyors</a></li>
+                    <li><a href="<?php echo e(route('professionals.index', ['category' => 'valuers'])); ?>">Valuers</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md-3 col-lg-2">

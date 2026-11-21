@@ -6,9 +6,10 @@
 @php
     $activePurpose = $filters['purpose'] ?? 'all';
     $activeCategory = $filters['category'] ?? 'all';
-    $activeCity = $filters['city'] ?? '';
-    $activeState = $filters['state'] ?? '';
-    $activeLocation = $filters['location'] ?? ($filters['area'] ?? ($activeCity ?: $activeState));
+    $activeCountry = $filters['country'] ?? 'all';
+    $activeCity = $filters['city'] ?? 'all';
+    $activeState = $filters['state'] ?? 'all';
+    $activeLocation = $filters['location'] ?? ($filters['area'] ?? (($activeCity !== 'all' ? $activeCity : '') ?: ($activeState !== 'all' ? $activeState : ($activeCountry !== 'all' ? $activeCountry : ''))));
     $activeSort = $filters['sort'] ?? 'newest';
     $startIdx = $properties->total() === 0 ? 0 : (($properties->currentPage() - 1) * $properties->perPage()) + 1;
     $endIdx = min($properties->total(), $properties->currentPage() * $properties->perPage());
@@ -193,27 +194,28 @@
                                 <label class="small font-weight-bold">Looking to</label>
                                 <div class="form-group lookFor">
                                     <div class="looking-options">
+                                        {{-- <label class="looking-option">
+                                            <input type="radio" name="purpose" value="all" checked>
+                                            <span>All</span>
+                                        </label> --}}
+
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Buy" checked>
+                                            <input type="radio" name="purpose" value="sale" checked>
                                             <span>Buy</span>
                                         </label>
 
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Rent">
+                                            <input type="radio" name="purpose" value="rent">
                                             <span>Rent</span>
                                         </label>
 
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Lease">
+                                            <input type="radio" name="purpose" value="lease">
                                             <span>Lease</span>
                                         </label>
 
                                         <label class="looking-option">
-                                            <input type="radio" name="looking_to"
-                                                value="Shortlet">
+                                            <input type="radio" name="purpose" value="shortlet">
                                             <span>Shortlet</span>
                                         </label>
                                     </div>
@@ -229,30 +231,24 @@
                             </div>
                             <div class="form-group">
                                 <label class="small firaMedium">Country</label>
-                                <select id="propertyFilterCountry" name="country" class="form-control form-control-sm" data-selected="{{ $activeCountry }}">
+                                <select id="propertyFilterCountry" name="country" class="form-control fieldOne" data-selected="{{ $activeCountry }}">
                                     <option value="all" {{ $activeCountry === 'all' ? 'selected' : '' }}>All Countries</option>
-                                    @foreach($allCountry as $countryOpt)
-                                        <option value="{{ $countryOpt }}" {{ strcasecmp($activeCountry, $countryOpt) === 0 ? 'selected' : '' }}>{{ $countryOpt }}</option>
+                                    @foreach($allCountry as $country => $states)
+                                        <option value="{{ $country }}" {{ strcasecmp($activeCountry, $country) === 0 ? 'selected' : '' }}>{{ ucwords($country) }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-6">
                                     <label class="small firaMedium">State</label>
-                                    <select name="state" class="form-control fieldOne">
-                                        <option value="all">All States</option>
-                                        @foreach(['Lagos', 'FCT', 'Rivers', 'Oyo'] as $st)
-                                            <option value="{{ $st }}" {{ $activeState === $st ? 'selected' : '' }}>{{ $st }}</option>
-                                        @endforeach
+                                    <select id="propertyFilterState" name="state" class="form-control fieldOne" data-selected="{{ $activeState }}">
+                                        <option value="all">Select country first</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="small firaMedium">City</label>
-                                    <select name="city" class="form-control fieldOne">
-                                        <option value="all">All Cities</option>
-                                        @foreach(['Lagos', 'Abuja', 'Port Harcourt', 'Ibadan'] as $ct)
-                                            <option value="{{ $ct }}" {{ $activeCity === $ct ? 'selected' : '' }}>{{ $ct }}</option>
-                                        @endforeach
+                                    <select id="propertyFilterCity" name="city" class="form-control fieldOne" data-selected="{{ $activeCity }}">
+                                        <option value="all">Select state first</option>
                                     </select>
                                 </div>
                             </div>

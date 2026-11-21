@@ -4,7 +4,7 @@
             <div class="hg-avatar-box">{{ $agent->initials }}</div>
             <span class="hg-verified-pill"><i class="fas fa-check-circle"></i> {{ ucfirst($agent->verification_status) }}</span>
         </div>
-        <h3 class="h6 font-weight-bold mb-1">{{ $agent->name }}</h3>
+        <h3 class="h6 firaMedium mb-1">{{ $agent->name }}</h3>
         <div class="small text-muted mb-1">{{ $agent->role_title }}</div>
         <div class="small text-muted mb-2" style="font-size: 12px"><i class="fas fa-map-marker-alt mr-1"></i> {{ $agent->city }}, {{ $agent->state }}</div>
         {{-- <p class="small text-secondary mb-3" style="flex: 1;">{{ $agent->description }}</p> --}}

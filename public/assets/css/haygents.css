@@ -61,7 +61,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .hg-display {
-  font-family: "Plus Jakarta Sans", "DM Sans", sans-serif;
+  /* font-family: "FiraMedium", sans-serif; */
   letter-spacing: -0.02em;
 }
 
@@ -293,7 +293,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
   border: none;
   padding: 0.45rem 0.25rem;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-family: "FiraMedium";
   color: var(--hg-primary) !important;
   text-decoration: none !important;
   white-space: nowrap;
@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
 .hg-nav-store-name {
   display: block;
   font-size: 0.76rem;
-  font-weight: 700;
+  font-family: "FiraSemiBold";
   line-height: 1.15;
 }
 
@@ -457,7 +457,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
   background-color: var(--hg-navy);
   border-color: var(--hg-navy);
   color: var(--hg-white);
-  font-weight: 600;
+  font-family: "FiraMedium";
   font-size: 0.875rem;
   border-radius: 8px;
   padding: 0.55rem 1.15rem;
@@ -474,7 +474,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
   background-color: var(--hg-white);
   border: 1px solid var(--hg-border);
   color: var(--hg-text-dark);
-  font-weight: 600;
+  font-family: "FiraMedium";
   font-size: 0.85rem;
   border-radius: 999px;
   padding: 0.48rem 1rem;
@@ -528,7 +528,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
 
 .hg-hero-title {
   font-size: clamp(2.15rem, 4vw, 3.35rem);
-  font-weight: 800;
+  font-family: "FiraBold";
   line-height: 1.12;
   margin-bottom: 0.9rem;
   text-wrap: balance;
@@ -904,7 +904,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
 .hg-property-price {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.05rem;
-  font-weight: 800;
+  font-family: "FiraSemiBold";
   color: var(--hg-navy);
   margin-bottom: 0.85rem;
 }
@@ -994,7 +994,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
 
 .hg-city-name {
   font-size: 1.02rem;
-  font-weight: 700;
+  font-family: "FiraSemiBold";
   color: var(--hg-navy);
   margin-bottom: 0.15rem;
 }
@@ -1364,7 +1364,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
   border: none;
   padding: 1.05rem 0;
   font-size: 0.96rem;
-  font-weight: 600;
+  font-family: "FiraMedium";
   color: var(--hg-navy);
   display: flex;
   align-items: center;
@@ -1445,7 +1445,7 @@ h1, h2, h3, h4, h5, h6, .hg-display {
 .hg-footer h6 {
   color: var(--hg-white);
   font-size: 0.85rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   margin-bottom: 1rem;
 }
 
@@ -1997,7 +1997,7 @@ textarea.hg-input-soft {
   background: var(--hg-white);
   color: var(--hg-text-dark);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-family: "FiraMedium";
   padding: 0.36rem 0.9rem;
   border-radius: 999px;
   text-decoration: none !important;
@@ -2066,7 +2066,7 @@ textarea.hg-input-soft {
   background: var(--hg-light);
   color: var(--hg-navy);
   font-size: 0.74rem;
-  font-weight: 600;
+  font-family: 'FiraMedium';
   padding: 0.26rem 0.65rem;
   border-radius: 6px;
 }

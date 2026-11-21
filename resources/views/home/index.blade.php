@@ -267,18 +267,22 @@
             <div class="row">
                 <div class="col-12 col-lg-8 mb-4 mb-lg-0">
                     <div class="hg-app-banner">
-                        <h2 class="h3 font-weight-bold text-white mb-2">Continue on the HAYGENTS App</h2>
+                        <h2 class="h3 firaSemiBold text-white mb-2">Continue on the HAYGENTS App</h2>
                         <p class="mb-4">Discover properties, connect with professionals, and manage your property search wherever you go.</p>
                         <div class="d-flex flex-wrap" style="gap: 0.75rem;">
-                            <a href="#" class="hg-store-btn"><i class="fab fa-google-play text-primary"></i> Google Play</a>
-                            <a href="#" class="hg-store-btn"><i class="fab fa-apple text-dark"></i> App Store</a>
+                            <a href="#" class="">
+                                <img src="{{ asset('assets/images/google.png') }}" alt="">
+                            </a>
+                            <a href="#" class="">
+                                <img src="{{ asset('assets/images/appstore.png') }}" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="hg-owner-banner d-flex flex-column justify-content-between">
                         <div>
-                            <h3 class="h5 font-weight-bold mb-2">Own Property or Represent a Company?</h3>
+                            <h3 class="h5 firaSemiBold mb-2">Own Property or Represent a Company?</h3>
                             <p class="small text-secondary mb-4">Join Haygents and connect with people searching for properties.</p>
                         </div>
                         <a href="{{ route('register') }}" class="btn hg-btn-navy btn-block">Register Now</a>

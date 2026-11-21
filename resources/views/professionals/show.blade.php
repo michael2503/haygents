@@ -76,8 +76,8 @@
             <div class="d-flex align-items-center mb-3 mb-md-0" style="gap: 1.15rem;">
                 <div class="hg-prof-hero-avatar">{{ $professional->initials }}</div>
                 <div>
-                    <div class="small font-weight-bold text-primary mb-1">Verified {{ strtolower($professional->category) }}</div>
-                    <h1 class="h2 font-weight-bold mb-1" style="color: var(--hg-navy);">{{ $professional->name }}</h1>
+                    <div class="small firaMedium text-primary mb-1">Verified {{ strtolower($professional->category) }}</div>
+                    <h1 class="h2 firaSemiBold mb-1" style="color: var(--hg-navy);">{{ $professional->name }}</h1>
                     <div class="small text-muted d-flex flex-wrap align-items-center" style="gap: 0.55rem;">
                         <span><i class="fas fa-map-marker-alt mr-1"></i> {{ $professional->city }}, {{ $professional->state }}</span>
                         <span>&middot;</span>
@@ -114,42 +114,42 @@
                     <div class="col-6 col-sm-4 col-md-2 mb-3 mb-md-0 px-2">
                         <div class="hg-prof-kpi-box">
                             <div class="small text-muted mb-1"><i class="fas fa-briefcase"></i></div>
-                            <div class="font-weight-bold tabular-nums" style="color: var(--hg-navy);">{{ $professional->years_exp }} years</div>
+                            <div class="firaSemiBold tabular-nums" style="color: var(--hg-navy);">{{ $professional->years_exp }} years</div>
                             <div class="text-muted" style="font-size: 0.72rem;">{{ $admittedLabel }}</div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-3 mb-md-0 px-2">
                         <div class="hg-prof-kpi-box">
                             <div class="small text-muted mb-1"><i class="far fa-check-circle"></i></div>
-                            <div class="font-weight-bold tabular-nums" style="color: var(--hg-navy);">{{ $jobsCompleted }}</div>
+                            <div class="firaSemiBold tabular-nums" style="color: var(--hg-navy);">{{ $jobsCompleted }}</div>
                             <div class="text-muted" style="font-size: 0.72rem;">Completed</div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-3 mb-md-0 px-2">
                         <div class="hg-prof-kpi-box">
                             <div class="small text-muted mb-1"><i class="far fa-calendar"></i></div>
-                            <div class="font-weight-bold tabular-nums" style="color: var(--hg-navy);">5 days</div>
+                            <div class="firaSemiBold tabular-nums" style="color: var(--hg-navy);">5 days</div>
                             <div class="text-muted" style="font-size: 0.72rem;">Turnaround</div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-3 mb-sm-0 px-2">
                         <div class="hg-prof-kpi-box">
                             <div class="small text-muted mb-1"><i class="far fa-star"></i></div>
-                            <div class="font-weight-bold tabular-nums" style="color: var(--hg-navy);">4.9</div>
+                            <div class="firaSemiBold tabular-nums" style="color: var(--hg-navy);">4.9</div>
                             <div class="text-muted" style="font-size: 0.72rem;">Customer rating</div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-3 mb-sm-0 px-2">
                         <div class="hg-prof-kpi-box">
                             <div class="small text-muted mb-1"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="font-weight-bold tabular-nums" style="color: var(--hg-navy);">2 states</div>
+                            <div class="firaSemiBold tabular-nums" style="color: var(--hg-navy);">2 states</div>
                             <div class="text-muted" style="font-size: 0.72rem;">States covered</div>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 px-2">
                         <div class="hg-prof-kpi-box">
                             <div class="small text-muted mb-1"><i class="fas fa-shield-alt"></i></div>
-                            <div class="font-weight-bold tabular-nums" style="color: var(--hg-navy);">2026</div>
+                            <div class="firaSemiBold tabular-nums" style="color: var(--hg-navy);">2026</div>
                             <div class="text-muted" style="font-size: 0.72rem;">{{ $sealLabel }}</div>
                         </div>
                     </div>
@@ -157,44 +157,44 @@
 
                 <!-- About -->
                 <div class="pb-4 mb-4 border-bottom">
-                    <h2 class="h5 font-weight-bold mb-2" style="color: var(--hg-navy);">About {{ $firstName }}</h2>
+                    <h2 class="h5 firaSemiBold mb-2" style="color: var(--hg-navy);">About {{ $firstName }}</h2>
                     <p class="text-secondary mb-2" style="line-height: 1.7;">
                         {{ $professional->name }} is a {{ strtolower($professional->category) }} in {{ $professional->city }} with {{ $professional->years_exp }} years of experience. {{ $professional->description }} You request services through HAYGENTS, and our team confirms the scope and price with you before any work starts.
                     </p>
                     <div id="profBioExtra" class="d-none text-secondary small mb-2" style="line-height: 1.65;">
                         All inspections, registry filings, and document reviews are tracked end-to-end inside HAYGENTS so buyers and landlords receive transparent milestone confirmations before any closing funds move.
                     </div>
-                    <button type="button" class="btn btn-link p-0 small font-weight-bold text-dark" data-action="toggle-prof-bio">
+                    <button type="button" class="btn btn-link p-0 small firaMedium text-dark" data-action="toggle-prof-bio">
                         Read more
                     </button>
                 </div>
 
                 <!-- Professional details grid -->
                 <div class="pb-4 mb-4 border-bottom">
-                    <h2 class="h5 font-weight-bold mb-3" style="color: var(--hg-navy);">Professional details</h2>
+                    <h2 class="h5 firaSemiBold mb-3" style="color: var(--hg-navy);">Professional details</h2>
                     <div class="row">
                         <div class="col-12 col-md-6 pr-md-4">
-                            <div class="hg-details-grid-row"><span class="text-muted">Profession</span><strong style="color: var(--hg-navy);">{{ $professional->category }}</strong></div>
-                            <div class="hg-details-grid-row"><span class="text-muted">{{ $sealLabel }}</span><strong style="color: var(--hg-navy);">Verified for 2026</strong></div>
-                            <div class="hg-details-grid-row"><span class="text-muted">Service mode</span><strong style="color: var(--hg-navy);">On-site and remote</strong></div>
-                            <div class="hg-details-grid-row"><span class="text-muted">Turnaround</span><strong style="color: var(--hg-navy);">{{ $turnaround }}</strong></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">Profession</span><span class="firaMedium" style="color: var(--hg-navy);">{{ $professional->category }}</span></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">{{ $sealLabel }}</span><span class="firaMedium" style="color: var(--hg-navy);">Verified for 2026</span></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">Service mode</span><span class="firaMedium" style="color: var(--hg-navy);">On-site and remote</span></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">Turnaround</span><span class="firaMedium" style="color: var(--hg-navy);">{{ $turnaround }}</span></div>
                         </div>
                         <div class="col-12 col-md-6 pl-md-4">
-                            <div class="hg-details-grid-row"><span class="text-muted">{{ $admittedLabel }}</span><strong class="tabular-nums" style="color: var(--hg-navy);">{{ $admittedYear }}</strong></div>
-                            <div class="hg-details-grid-row"><span class="text-muted">Practice</span><strong style="color: var(--hg-navy);">{{ $practiceType }}</strong></div>
-                            <div class="hg-details-grid-row"><span class="text-muted">States covered</span><strong style="color: var(--hg-navy);">{{ $statesCovered }}</strong></div>
-                            <div class="hg-details-grid-row"><span class="text-muted">Verified since</span><strong style="color: var(--hg-navy);">February 2024</strong></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">{{ $admittedLabel }}</span><span class="firaMedium tabular-nums" style="color: var(--hg-navy);">{{ $admittedYear }}</span></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">Practice</span><span class="firaMedium" style="color: var(--hg-navy);">{{ $practiceType }}</span></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">States covered</span><span class="firaMedium" style="color: var(--hg-navy);">{{ $statesCovered }}</span></div>
+                            <div class="hg-details-grid-row"><span class="text-muted">Verified since</span><span class="firaMedium" style="color: var(--hg-navy);">February 2024</span></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Services -->
                 <div class="pb-4 mb-4 border-bottom">
-                    <h2 class="h5 font-weight-bold mb-3" style="color: var(--hg-navy);">Services</h2>
+                    <h2 class="h5 firaSemiBold mb-3" style="color: var(--hg-navy);">Services</h2>
                     <div class="row">
                         @foreach($serviceGroups as $grp)
                             <div class="col-12 col-sm-6 mb-3">
-                                <h3 class="small font-weight-bold mb-2" style="color: var(--hg-navy);">{{ $grp['title'] }}</h3>
+                                <h3 class="small firaMedium mb-2" style="color: var(--hg-navy);">{{ $grp['title'] }}</h3>
                                 <ul class="list-unstyled small text-secondary mb-0">
                                     @foreach($grp['items'] as $item)
                                         <li class="mb-2"><i class="fas fa-check text-success mr-2"></i>{{ $item }}</li>
@@ -207,7 +207,7 @@
 
                 <!-- How it works through HAYGENTS -->
                 <div class="pb-4 mb-4 border-bottom">
-                    <h2 class="h5 font-weight-bold mb-3" style="color: var(--hg-navy);">How it works through HAYGENTS</h2>
+                    <h2 class="h5 firaSemiBold mb-3" style="color: var(--hg-navy);">How it works through HAYGENTS</h2>
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="hg-process-step-row"><span class="hg-process-step-icon"><i class="fas fa-mobile-alt"></i></span><span>Request the service in the HAYGENTS app</span></div>
@@ -224,7 +224,7 @@
 
                 <!-- Verification summary -->
                 <div class="pb-4 mb-4 border-bottom">
-                    <h2 class="h5 font-weight-bold mb-1" style="color: var(--hg-navy);">Verification summary</h2>
+                    <h2 class="h5 firaSemiBold mb-1" style="color: var(--hg-navy);">Verification summary</h2>
                     <p class="small text-muted mb-2">What HAYGENTS has checked for this professional.</p>
                     <ul class="hg-check-list mb-2">
                         @foreach($verificationRows as $rowLabel)
@@ -239,12 +239,12 @@
 
                 <!-- Customer reviews -->
                 <div class="pb-4 mb-4">
-                    <h2 class="h5 font-weight-bold mb-1" style="color: var(--hg-navy);">Customer reviews</h2>
+                    <h2 class="h5 firaSemiBold mb-1" style="color: var(--hg-navy);">Customer reviews</h2>
                     <p class="small text-muted mb-3">4.9 out of 5 from 31 HAYGENTS customers. These reviews are samples.</p>
                     @foreach($reviews as $rev)
                         <div class="hg-review-card">
                             <div class="small text-muted mb-1">
-                                <strong style="color: var(--hg-navy);">{{ $rev['author'] }}</strong>
+                                <span class="firaMedium" style="color: var(--hg-navy);">{{ $rev['author'] }}</span>
                                 &nbsp;&middot;&nbsp; {{ $rev['context'] }}
                                 &nbsp;&middot;&nbsp; {{ $rev['date'] }}
                                 &nbsp;&middot;&nbsp; 5 out of 5
@@ -255,7 +255,7 @@
                 </div>
 
                 <div class="p-3 rounded bg-light border" style="border-radius: 12px;">
-                    <div class="small font-weight-bold mb-1" style="color: var(--hg-navy);">Good to know</div>
+                    <div class="small firaMedium mb-1" style="color: var(--hg-navy);">Good to know</div>
                     <div class="small text-secondary">Contact details are private. Never pay a professional directly: every payment goes through the HAYGENTS app.</div>
                 </div>
             </div>
@@ -264,7 +264,7 @@
             <div class="col-12 col-lg-4" id="request-service">
                 <div class="hg-sticky-cta-card">
                     <div class="small text-muted mb-1">Request a service from</div>
-                    <h2 class="h4 font-weight-bold mb-2" style="color: var(--hg-navy);">{{ $professional->name }}</h2>
+                    <h2 class="h4 mb-2" style="color: var(--hg-navy);">{{ $professional->name }}</h2>
                     <p class="small text-secondary mb-4" style="line-height: 1.55;">
                         Choose a service in the HAYGENTS app. HAYGENTS confirms the scope and price with you before any work starts, and you get the report in the app. Contact details are never shared.
                     </p>
@@ -293,7 +293,7 @@
                                 <div class="hg-avatar-box">{{ $other->initials }}</div>
                                 <span class="hg-verified-pill"><i class="fas fa-check-circle"></i> Verified</span>
                             </div>
-                            <h3 class="h6 font-weight-bold mb-1" style="color: var(--hg-navy);">{{ $other->name }}</h3>
+                            <h3 class="h6 firaSemiBold mb-1" style="color: var(--hg-navy);">{{ $other->name }}</h3>
                             <div class="small text-muted mb-1">{{ $other->category }} &middot; {{ $other->years_exp }} years</div>
                             <div class="small text-muted mb-3"><i class="fas fa-map-marker-alt mr-1"></i> {{ $other->city }}, {{ $other->state }}</div>
                             <div class="hg-cred-box mt-auto"><i class="far fa-check-circle text-primary mr-1"></i> {{ $other->credentials }}</div>

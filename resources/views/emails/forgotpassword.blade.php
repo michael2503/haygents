@@ -40,7 +40,7 @@
                                                 <tr>
                                                     <td class="header" style="border-bottom: 1px solid #eee; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 10px 20px 0px 20px; text-align: center;">
                                                         <a target="_blank" rel="noopener noreferrer" href="" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
-                                                            <img src="{{ asset('assets/images/logo2.png') }}" alt="" style="width: 180px">
+                                                            <img src="{{ asset('assets/images/logo.png') }}" alt="" style="width: 180px">
                                                         </a>
                                                     </td>
                                                 </tr>

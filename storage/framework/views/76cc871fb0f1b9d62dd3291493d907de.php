@@ -34,14 +34,14 @@
                                             <span class="d-block hg-mega-sub">Buy houses</span>
                                         </span>
                                     </a>
-                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'sale', 'category' => 'apartments'])); ?>" class="hg-mega-item">
+                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'sale', 'category' => 'flats-and-apartment'])); ?>" class="hg-mega-item">
                                         <span class="hg-mega-icon"><i class="far fa-building"></i></span>
                                         <span>
                                             <span class="d-block hg-mega-title">Flat / Apartments</span>
                                             <span class="d-block hg-mega-sub">Buy flats or apartments</span>
                                         </span>
                                     </a>
-                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'sale', 'category' => 'land-plots'])); ?>" class="hg-mega-item">
+                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'sale', 'category' => 'land'])); ?>" class="hg-mega-item">
                                         <span class="hg-mega-icon"><i class="fas fa-vector-square"></i></span>
                                         <span>
                                             <span class="d-block hg-mega-title">Land</span>
@@ -92,14 +92,14 @@
                                             <span class="d-block hg-mega-sub">Rent houses</span>
                                         </span>
                                     </a>
-                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'rent', 'category' => 'apartments'])); ?>" class="hg-mega-item">
+                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'rent', 'category' => 'flats-and-apartment'])); ?>" class="hg-mega-item">
                                         <span class="hg-mega-icon"><i class="far fa-building"></i></span>
                                         <span>
                                             <span class="d-block hg-mega-title">Flat / Apartments</span>
                                             <span class="d-block hg-mega-sub">Rent flats or apartments</span>
                                         </span>
                                     </a>
-                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'rent', 'category' => 'land-plots'])); ?>" class="hg-mega-item">
+                                    <a href="<?php echo e(route('properties.index', ['purpose' => 'rent', 'category' => 'land'])); ?>" class="hg-mega-item">
                                         <span class="hg-mega-icon"><i class="fas fa-vector-square"></i></span>
                                         <span>
                                             <span class="d-block hg-mega-title">Land</span>

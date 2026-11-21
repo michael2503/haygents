@@ -31,7 +31,7 @@
 
                             </div>
                             <div>
-                                <div class="font-weight-bold small"><?php echo e($testimonial->customer_name); ?></div>
+                                <div class="firaSemiBold small"><?php echo e($testimonial->customer_name); ?></div>
                                 <div class="text-muted" style="font-size: 0.78rem;"><?php echo e($testimonial->customer_role); ?>, <?php echo e($testimonial->location); ?></div>
                             </div>
                         </div>

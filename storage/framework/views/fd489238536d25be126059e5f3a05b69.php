@@ -4,7 +4,7 @@
             <div class="hg-avatar-box"><?php echo e($agent->initials); ?></div>
             <span class="hg-verified-pill"><i class="fas fa-check-circle"></i> <?php echo e(ucfirst($agent->verification_status)); ?></span>
         </div>
-        <h3 class="h6 font-weight-bold mb-1"><?php echo e($agent->name); ?></h3>
+        <h3 class="h6 firaMedium mb-1"><?php echo e($agent->name); ?></h3>
         <div class="small text-muted mb-1"><?php echo e($agent->role_title); ?></div>
         <div class="small text-muted mb-2" style="font-size: 12px"><i class="fas fa-map-marker-alt mr-1"></i> <?php echo e($agent->city); ?>, <?php echo e($agent->state); ?></div>
         

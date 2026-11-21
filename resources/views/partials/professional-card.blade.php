@@ -4,7 +4,7 @@
             <div class="hg-avatar-box">{{ $professional->initials }}</div>
             <span class="hg-verified-pill"><i class="fas fa-check-circle"></i> {{ ucfirst($professional->verification_status) }}</span>
         </div>
-        <h3 class="h6 font-weight-bold mb-1">{{ $professional->name }}</h3>
+        <h3 class="h6 firaMedium mb-1">{{ $professional->name }}</h3>
         <div class="small font-weight-semibold text-primary mb-1">{{ $professional->category }} · {{ $professional->years_exp }} yrs</div>
         <div class="small text-muted mb-2"><i class="fas fa-map-marker-alt mr-1"></i> {{ $professional->city }}, {{ $professional->state }}</div>
         <p class="small text-secondary mb-3" style="flex: 1;">{{ $professional->description }}</p>

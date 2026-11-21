@@ -15,7 +15,7 @@ use Illuminate\View\View;
 
 class PropertyController extends Controller
 {
-    public function index(PropertySearchRequest $request, PropertySearchService $searchService): View
+    public function index(PropertySearchRequest $request, PropertySearchService $searchService)
     {
         $filters = $request->validated();
         $properties = $searchService->search($filters);
@@ -24,8 +24,9 @@ class PropertyController extends Controller
             : [];
 
         $catego = Category::get();
+        $allCountry = $searchService->getCountry();
 
-        return view('properties.index', compact('properties', 'filters', 'favoriteIds', 'catego'));
+        return view('properties.index', compact('properties', 'filters', 'favoriteIds', 'catego', 'allCountry'));
     }
 
     public function show(Property $property): View

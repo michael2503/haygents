@@ -128,3 +128,63 @@ class ProfessionalSeeder extends Seeder
         }
     }
 }
+
+
+
+// <?php
+
+// namespace Database\Seeders;
+
+// use App\Models\ProfessionalService;
+// use Illuminate\Database\Seeder;
+
+// class ProfessionalServiceSeeder extends Seeder
+// {
+//     public function run(): void
+//     {
+//         $services = [
+//             // Property Lawyer Services
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-title-search', 'name' => 'Title search', 'description' => 'Land registry search and root of title verification', 'sort_order' => 1],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-deed-of-assignment', 'name' => 'Deed of assignment', 'description' => 'Drafting and execution of Deeds of Assignment', 'sort_order' => 2],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-governors-consent', 'name' => "Governor's consent", 'description' => 'Perfection of title and Governor Consent processing', 'sort_order' => 3],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-contract-review', 'name' => 'Contract review', 'description' => 'Review of sale, purchase and joint venture agreements', 'sort_order' => 4],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-lease-agreements', 'name' => 'Lease agreements', 'description' => 'Residential and commercial tenancy/lease drafting', 'sort_order' => 5],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-power-of-attorney', 'name' => 'Power of attorney', 'description' => 'Irrevocable and general property powers of attorney', 'sort_order' => 6],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-registration-of-title', 'name' => 'Registration of title', 'description' => 'Certificate of Occupancy and title registration', 'sort_order' => 7],
+//             ['profession_type' => 'lawyer', 'slug' => 'lawyer-off-plan-contract-review', 'name' => 'Off-plan contract review', 'description' => 'Developer due diligence and off-plan agreement review', 'sort_order' => 8],
+
+//             // Land Surveyor Services
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-boundary-survey', 'name' => 'Boundary survey', 'description' => 'Beacon re-establishment and boundary delineation', 'sort_order' => 1],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-survey-plan-preparation', 'name' => 'Survey plan preparation', 'description' => 'SURCON-sealed survey plan preparation and charting', 'sort_order' => 2],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-site-verification', 'name' => 'Site verification', 'description' => 'Coordinate charting and acquisition status verification', 'sort_order' => 3],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-perimeter-survey', 'name' => 'Perimeter survey', 'description' => 'Estate and large parcel perimeter surveying', 'sort_order' => 4],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-topographic-survey', 'name' => 'Topographic survey', 'description' => 'Elevation, contour and terrain mapping', 'sort_order' => 5],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-setting-out', 'name' => 'Setting out', 'description' => 'Construction grid and foundation setting out', 'sort_order' => 6],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-land-subdivision', 'name' => 'Land subdivision', 'description' => 'Layout partitioning into approved plot allocations', 'sort_order' => 7],
+//             ['profession_type' => 'surveyor', 'slug' => 'surveyor-as-built-survey', 'name' => 'As-built survey', 'description' => 'Post-construction structure and boundary verification', 'sort_order' => 8],
+
+//             // Estate Surveyor and Valuer Services
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-property-valuation', 'name' => 'Property valuation', 'description' => 'ESVARBON-compliant open market property valuation', 'sort_order' => 1],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-market-analysis', 'name' => 'Market analysis', 'description' => 'Comparative sales and neighbourhood yield analysis', 'sort_order' => 2],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-investment-report', 'name' => 'Investment report', 'description' => 'Capital appreciation and cashflow appraisal report', 'sort_order' => 3],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-rent-review', 'name' => 'Rent review', 'description' => 'Fair market rental assessment and renewal advisory', 'sort_order' => 4],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-property-inspection', 'name' => 'Property inspection', 'description' => 'Physical condition and asset audit inspection', 'sort_order' => 5],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-feasibility-study', 'name' => 'Feasibility study', 'description' => 'Development viability and cost-return study', 'sort_order' => 6],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-insurance-valuation', 'name' => 'Insurance valuation', 'description' => 'Reinstatement and replacement cost assessment', 'sort_order' => 7],
+//             ['profession_type' => 'valuer', 'slug' => 'valuer-mortgage-valuation', 'name' => 'Mortgage valuation', 'description' => 'Bank and mortgage collateral security valuation', 'sort_order' => 8],
+//         ];
+
+//         foreach ($services as $service) {
+//             ProfessionalService::updateOrCreate(
+//                 ['slug' => $service['slug']],
+//                 [
+//                     'profession_type' => $service['profession_type'],
+//                     'name' => $service['name'],
+//                     'description' => $service['description'],
+//                     'is_active' => true,
+//                     'sort_order' => $service['sort_order'],
+//                 ]
+//             );
+//         }
+//     }
+// }

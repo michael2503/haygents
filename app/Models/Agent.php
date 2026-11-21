@@ -10,12 +10,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Agent extends Model
 {
     protected $fillable = [
-        'slug', 'name', 'initials', 'role_title', 'years_exp', 'city', 'state',
+        'slug', 'user_id', 'name', 'initials', 'role_title', 'years_exp', 'city', 'state',
         'description', 'credentials', 'verification_status', 'phone', 'email', 'avatar_path', 'is_approved',
     ];
 
     public function properties(): HasMany
     {
         return $this->hasMany(Property::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }

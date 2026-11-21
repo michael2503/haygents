@@ -10,7 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Professional extends Model
 {
     protected $fillable = [
-        'slug', 'name', 'initials', 'category', 'category_slug', 'years_exp',
+        'slug', 'user_id', 'name', 'initials', 'category', 'category_slug', 'years_exp',
         'city', 'state', 'description', 'credentials', 'avatar_path', 'verification_status', 'is_approved',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
 }

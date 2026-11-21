@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Company extends Model
 {
     protected $fillable = [
-        'slug', 'name', 'initials', 'specialty', 'city', 'state', 'email', 'phone',
+        'slug', 'user_id', 'name', 'initials', 'specialty', 'city', 'state', 'email', 'phone',
         'description', 'credentials', 'logo_path', 'verification_status', 'is_approved',
     ];
 
@@ -18,5 +18,10 @@ class Company extends Model
     {
         return $this->hasMany(Property::class);
     }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
 }
 
